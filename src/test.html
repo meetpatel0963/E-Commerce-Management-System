@@ -1,0 +1,1314 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width" />
+    <link rel="profile" href="http://gmpg.org/xfn/11" />
+    <link rel="pingback" href="https://themeisle.com/xmlrpc.php" />
+    <style id="aoatfcss" media="all">
+        @font-face {
+            font-family: sofia-pro;
+            src: url(https://use.typekit.net/af/30420e/00000000000000003b9b1a9e/27/l?fvd=n7&primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&v=3) format("woff2"), url(https://use.typekit.net/af/30420e/00000000000000003b9b1a9e/27/d?fvd=n7&primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&v=3) format("woff"), url(https://use.typekit.net/af/30420e/00000000000000003b9b1a9e/27/a?fvd=n7&primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&v=3) format("opentype");
+            font-weight: 700;
+            font-style: normal;
+            font-display: swap
+        }
+
+        @font-face {
+            font-family: sofia-pro;
+            src: url(https://use.typekit.net/af/5855b2/00000000000000003b9b1a98/27/l?fvd=n4&primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&v=3) format("woff2"), url(https://use.typekit.net/af/5855b2/00000000000000003b9b1a98/27/d?fvd=n4&primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&v=3) format("woff"), url(https://use.typekit.net/af/5855b2/00000000000000003b9b1a98/27/a?fvd=n4&primer=7cdcb44be4a7db8877ffa5c0007b8dd865b3bbc383831fe2ea177f62257a9191&v=3) format("opentype");
+            font-weight: 400;
+            font-style: normal;
+            font-display: swap
+        }
+
+        a,
+        body,
+        div,
+        form,
+        h2,
+        h5,
+        html,
+        iframe,
+        img,
+        li,
+        p,
+        span,
+        ul {
+            margin: 0;
+            padding: 0;
+            border: 0;
+            font-size: 100%;
+            font: inherit;
+            vertical-align: baseline
+        }
+
+        #switcher {
+            height: auto;
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            background: #fff;
+            z-index: 99999;
+            position: fixed;
+            width: 100%;
+            box-shadow: 0 10px 10px 0 rgba(0, 0, 0, .07);
+            font-family: sofia-pro
+        }
+
+        .center {
+            display: -ms-flexbox;
+            display: flex;
+            -ms-flex-align: center;
+            align-items: center;
+            margin: auto;
+            width: 100%;
+            padding: 0 40px
+        }
+
+        .fbar-theme-name {
+            color: #393939;
+            display: block;
+            float: left;
+            font-size: 14px;
+            margin-bottom: 0;
+            text-transform: uppercase;
+            font-weight: 600;
+            font-family: sofia-pro;
+            letter-spacing: 1px;
+            margin-right: 60px
+        }
+
+        .fbar-theme-name span {
+            color: #4267cf;
+            font-weight: 600
+        }
+
+        .links {
+            display: -ms-flexbox;
+            display: flex;
+            margin-left: auto;
+            -ms-flex-align: center;
+            align-items: center
+        }
+
+        .links li:last-child {
+            margin-right: 20px;
+            margin-left: 20px
+        }
+
+        .center ul li {
+            display: inline-block
+        }
+
+        #iframe {
+            display: block;
+            margin: 52px auto 0;
+            height: calc(100vh - 52px)
+        }
+
+        #switcher .fbar-separator,
+        #switcher .fbar-theme-name,
+        #switcher .logo,
+        #switcher .responsive {
+            display: block;
+            float: none
+        }
+
+        .fbar-separator {
+            height: 50px;
+            width: 1px;
+            background-color: #e9e9e9;
+            content: " ";
+            vertical-align: middle;
+            margin: auto 30px
+        }
+
+        .logo img {
+            max-width: 100%;
+            height: 45px;
+            opacity: 1;
+            position: relative;
+            top: 4px
+        }
+
+        .responsive {
+            float: left
+        }
+
+        .responsive a {
+            margin-right: 10px;
+            float: left
+        }
+
+        .responsive a:last-child {
+            margin-right: 0
+        }
+
+        .responsive a svg {
+            opacity: .5
+        }
+
+        .responsive_buttons_demo a {
+            max-width: 25px;
+            max-height: 25px
+        }
+
+        .responsive_buttons_demo a svg {
+            width: 100%;
+            height: 100%
+        }
+
+        .responsive a.mobilelandscape svg,
+        .responsive a.tabletlandscape svg {
+            transform: rotate(90deg)
+        }
+
+        .responsive a.active svg {
+            opacity: .8;
+            color: #fff
+        }
+
+        #hide-demo-bar {
+            opacity: .5;
+            margin-top: -15px;
+            display: block;
+            position: absolute;
+            width: 32px;
+            height: 32px;
+            content: ""
+        }
+
+        #hide-demo-bar svg {
+            width: 100%;
+            height: 100%
+        }
+
+        #hide-demo-bar svg:last-child {
+            display: none
+        }
+
+        .demo-admin-modal {
+            -webkit-font-smoothing: antialiased;
+            text-rendering: optimizeLegibility;
+            color: #fff;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 999999;
+            text-align: center;
+            display: none;
+            font-size: 16px;
+            overflow-y: auto;
+            background: #4267cf;
+            padding: 150px 0 0
+        }
+
+        .close-demo-admin-modal {
+            position: absolute;
+            right: 30px;
+            top: 30px;
+            width: 22px;
+            height: 22px;
+            content: ""
+        }
+
+        .close-demo-admin-modal svg {
+            width: 100%;
+            height: 100%;
+            fill: #fff;
+            opacity: .5
+        }
+
+        .demo-admin-modal h2 {
+            color: #fff;
+            font-weight: 600;
+            font-size: 60px;
+            font-family: sofia-pro;
+            margin-bottom: 20px
+        }
+
+        .demo-admin-modal p {
+            font-size: 35px;
+            max-width: 600px;
+            margin: 0 auto;
+            font-family: sofia-pro;
+            font-weight: 400;
+            line-height: 45px
+        }
+
+        #admin-demo-form {
+            max-width: 800px;
+            margin: 60px auto 0
+        }
+
+        .demo-admin-modal .email-input:-ms-input-placeholder {
+            color: #fff;
+            opacity: 1
+        }
+
+        .demo-admin-modal .email-input {
+            padding: 16px 20px;
+            color: #fff;
+            border: 2px solid #fff;
+            font-size: 16px;
+            width: 70%;
+            float: left;
+            font-family: sofia-pro;
+            margin-bottom: 0;
+            border-radius: 0;
+            font-weight: 600
+        }
+
+        .admin-demo-submit {
+            display: inline-block;
+            border: 2px solid #ff7e65;
+            margin: 0;
+            text-transform: uppercase;
+            text-decoration: none !important;
+            font-size: 14px;
+            line-height: 19px;
+            font-weight: 700;
+            border-radius: 0;
+            letter-spacing: 1px;
+            color: #fff;
+            padding: 20px 80px;
+            float: left;
+
+            background: #ff7e65;
+            width: 30%;
+            font-family: sofia-pro
+        }
+
+        #admin-demo-api-link,
+        .demo-admin-modal .loader {
+            display: none
+        }
+
+        .buynow-btn {
+            display: inline-block;
+            margin: 0;
+            font-size: 14px;
+            line-height: normal;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            font-weight: 700;
+            border-radius: 0;
+            letter-spacing: .04em;
+            color: #fff;
+            padding: 16px 50px;
+            background: #42c3d1;
+            text-decoration: none !important;
+            font-family: sofia-pro
+        }
+
+        .livedemo-btn {
+            display: inline-block;
+            margin: 0;
+            text-decoration: none !important;
+            text-transform: uppercase;
+            font-weight: 700;
+            font-size: 14px;
+            line-height: normal;
+            border-radius: 0;
+            letter-spacing: 1px;
+            color: #fff;
+            padding: 16px 50px;
+            background: #ff7f66;
+            font-family: sofia-pro
+        }
+
+        @media (max-width:1200px) {
+            .fbar-theme-name {
+                margin-right: 0
+            }
+
+            .links li:last-child {
+                margin-right: 30px
+            }
+
+            .fbar-separator {
+                margin: auto 20px
+            }
+
+            .center {
+                padding: 0 20px
+            }
+        }
+
+        @media (max-width:767px) {
+
+            #switcher .fbar-separator.middle-separator,
+            #switcher .responsive.responsive_buttons_demo {
+                display: none
+            }
+
+            .logo {
+                margin-right: 10px
+            }
+
+            .links {
+                font-size: 11px
+            }
+
+            .demo-admin-modal .email-input {
+                max-width: 80%
+            }
+
+            .admin-demo-submit {
+                width: 90%;
+                margin: 0 auto
+            }
+
+            .demo-admin-modal p {
+                font-size: 20px
+            }
+
+            .demo-admin-modal h2 {
+                margin-bottom: 20px;
+                font-size: 50px
+            }
+
+            .demo-admin-modal {
+                padding: 15vh 0
+            }
+
+            #admin-demo-form {
+                margin-top: 80px
+            }
+        }
+
+        @media (max-width:480px) {
+
+            #switcher .fbar-separator,
+            #switcher .fbar-theme-name {
+                display: none
+            }
+
+            .center {
+                width: 95%
+            }
+
+            .purchase a {
+                padding: 18px 30px
+            }
+
+            .links {
+                font-size: 0
+            }
+        }
+
+        @media screen and (max-width:834px) {
+            #switcher .admindemolink {
+                display: none !important
+            }
+        }
+
+        .sk-circle {
+            margin: 100px auto;
+            width: 40px;
+            height: 40px;
+            position: relative
+        }
+
+        .sk-circle .sk-child {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0
+        }
+
+        .sk-circle .sk-child:before {
+            content: "";
+            display: block;
+            margin: 0 auto;
+            width: 15%;
+            height: 15%;
+            background-color: #fff;
+            border-radius: 100%;
+            animation: 1.2s ease-in-out infinite both sk-circleBounceDelay
+        }
+
+        .sk-circle .sk-circle2 {
+            transform: rotate(30deg)
+        }
+
+        .sk-circle .sk-circle3 {
+            transform: rotate(60deg)
+        }
+
+        .sk-circle .sk-circle4 {
+            transform: rotate(90deg)
+        }
+
+        .sk-circle .sk-circle5 {
+            transform: rotate(120deg)
+        }
+
+        .sk-circle .sk-circle6 {
+            transform: rotate(150deg)
+        }
+
+        .sk-circle .sk-circle7 {
+            transform: rotate(180deg)
+        }
+
+        .sk-circle .sk-circle8 {
+            transform: rotate(210deg)
+        }
+
+        .sk-circle .sk-circle9 {
+            transform: rotate(240deg)
+        }
+
+        .sk-circle .sk-circle10 {
+            transform: rotate(270deg)
+        }
+
+        .sk-circle .sk-circle11 {
+            transform: rotate(300deg)
+        }
+
+        .sk-circle .sk-circle12 {
+            transform: rotate(330deg)
+        }
+
+        .sk-circle .sk-circle2:before {
+            animation-delay: -1.1s
+        }
+
+        .sk-circle .sk-circle3:before {
+            animation-delay: -1s
+        }
+
+        .sk-circle .sk-circle4:before {
+            animation-delay: -.9s
+        }
+
+        .sk-circle .sk-circle5:before {
+            animation-delay: -.8s
+        }
+
+        .sk-circle .sk-circle6:before {
+            animation-delay: -.7s
+        }
+
+        .sk-circle .sk-circle7:before {
+            animation-delay: -.6s
+        }
+
+        .sk-circle .sk-circle8:before {
+            animation-delay: -.5s
+        }
+
+        .sk-circle .sk-circle9:before {
+            animation-delay: -.4s
+        }
+
+        .sk-circle .sk-circle10:before {
+            animation-delay: -.3s
+        }
+
+        .sk-circle .sk-circle11:before {
+            animation-delay: -.2s
+        }
+
+        .sk-circle .sk-circle12:before {
+            animation-delay: -.1s
+        }
+
+        @keyframes sk-circleBounceDelay {
+
+            0%,
+            80%,
+            to {
+                transform: scale(0)
+            }
+
+            40% {
+                transform: scale(1)
+            }
+        }
+
+        body,
+        h2,
+        h5,
+        html,
+        iframe,
+        li,
+        p,
+        ul {
+            margin: 0;
+            padding: 0
+        }
+
+        ul {
+            list-style: none
+        }
+
+        html {
+            box-sizing: border-box;
+            -ms-overflow-style: scrollbar;
+            font-size: 100%;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale
+        }
+
+        *,
+        :after,
+        :before {
+            box-sizing: border-box;
+            -webkit-box-sizing: border-box
+        }
+
+        img {
+            height: auto;
+            max-width: 100%
+        }
+
+        iframe {
+            border: 0;
+            max-width: 100%
+        }
+
+        body {
+            overflow: hidden;
+            font-weight: 400;
+            font-family: Graphik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+            color: #404248;
+            line-height: 1.68421;
+            overflow-x: hidden;
+            direction: ltr;
+            background-color: #fff;
+            font-size: 16px
+        }
+
+        h2,
+        h5 {
+            font-family: Graphik, -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif;
+            line-height: 1.68421;
+            margin-bottom: .8rem;
+            font-weight: 600
+        }
+
+        p {
+            margin-bottom: 20px
+        }
+
+        a {
+            color: #0366d6;
+            text-decoration: none
+        }
+
+        h2 {
+            font-size: 1.3em
+        }
+
+        h5 {
+            font-size: .75em
+        }
+
+        input[type=email] {
+            display: inline-block;
+            font-size: 14px;
+            padding: 7px 12px;
+            background-color: transparent;
+            color: #333;
+            border: 1px solid #ddd;
+            border-radius: 3px
+        }
+
+        button,
+        input {
+            margin: 0;
+            line-height: inherit;
+            -webkit-box-sizing: border-box;
+            -moz-box-sizing: border-box;
+            box-sizing: border-box
+        }
+
+        button {
+            font-size: .8em;
+            font-weight: 600;
+            padding: 6px 12px;
+            text-align: center;
+            vertical-align: middle;
+            border: 1px solid transparent;
+            border-radius: .25rem;
+            text-transform: uppercase;
+            line-height: 1.68421;
+            font-family: inherit;
+            background-color: #0366d6;
+            color: #fff
+        }
+
+        @media (min-width:769px) {
+            h2 {
+                font-size: 1.75em
+            }
+
+            h5 {
+                font-size: 1em
+            }
+        }
+
+        body:before {
+            position: fixed;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            content: " ";
+            background: rgba(0, 0, 0, .5);
+            visibility: hidden;
+            opacity: 0
+        }
+    </style><noscript id="aonoscrcss"></noscript>
+    <title>ShopIsle PRO WordPress Theme Demo | Themeisle</title>
+    <meta name="robots" content="max-snippet:-1, max-image-preview:large, max-video-preview:-1" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="ShopIsle PRO WordPress Theme Demo | Themeisle" />
+    <meta property="og:site_name" content="Themeisle" />
+    <meta property="article:publisher" content="https://www.facebook.com/themeisle/" />
+    <meta property="og:image"
+        content="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-p7d8N-nV/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/uploads/2019/05/general-featured.jpg" />
+    <meta property="og:image:secure_url"
+        content="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-p7d8N-nV/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/uploads/2019/05/general-featured.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="ShopIsle PRO WordPress Theme Demo | Themeisle" />
+    <meta name="twitter:site" content="@themeisle" />
+    <meta name="twitter:image"
+        content="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-p7d8N-nV/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/uploads/2019/05/general-featured.jpg" />
+    <meta name="twitter:creator" content="@themeisle" />
+    <script type='application/ld+json' class='yoast-schema-graph yoast-schema-graph--main'>
+        {
+            "@context": "https://schema.org",
+            "@graph": [{
+                "@type": "WebSite",
+                "@id": "https://themeisle.com/#website",
+                "url": "https://themeisle.com/",
+                "name": "Themeisle",
+                "potentialAction": {
+                    "@type": "SearchAction",
+                    "target": "https://themeisle.com/?s={search_term_string}",
+                    "query-input": "required name=search_term_string"
+                }
+            }, {
+                "@type": "WebPage",
+                "@id": "https://themeisle.com/demo/#webpage",
+                "url": "https://themeisle.com/demo/",
+                "inLanguage": "en-US",
+                "name": "ShopIsle PRO WordPress Theme Demo | Themeisle",
+                "isPartOf": {
+                    "@id": "https://themeisle.com/#website"
+                },
+                "datePublished": "2019-03-12T14:55:47+00:00",
+                "dateModified": "2019-07-05T11:49:10+00:00"
+            }]
+        }
+    </script>
+    <link rel='dns-prefetch' href='//themeisle.com' />
+    <link rel='dns-prefetch' href='//mllj2j8xvfl0.i.optimole.com' />
+    <link href='https://themeisle.onfastspring.com' rel='preconnect' />
+    <link rel='preconnect' href='https://mllj2j8xvfl0.i.optimole.com' />
+    <link rel="alternate" type="application/rss+xml" title="Themeisle &raquo; Feed"
+        href="https://themeisle.com/feed/" />
+    <link rel="alternate" type="application/rss+xml" title="Themeisle &raquo; Comments Feed"
+        href="https://themeisle.com/comments/feed/" /> <noscript>
+        <link rel='stylesheet'
+            href='https://s30246.pcdn.co/wp-content/themes/themeisle/assets/css/demo.min.css?ver=3.1.2' type='text/css'
+            media='all' /></noscript>
+    <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='themeisle-demo-css-css'
+        href='https://s30246.pcdn.co/wp-content/themes/themeisle/assets/css/demo.min.css?ver=3.1.2' type='text/css'
+        media='all' /> <noscript>
+        <link rel='stylesheet' href='https://s30246.pcdn.co/wp-content/themes/neve/style.min.css?ver=2.3.7'
+            type='text/css' media='all' /></noscript>
+    <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='neve-style-css'
+        href='https://s30246.pcdn.co/wp-content/themes/neve/style.min.css?ver=2.3.7' type='text/css' media='all' />
+    <style id='optm_lazyload_noscript_style-inline-css' type='text/css'>
+        .optimole-no-script img[data-opt-src] {
+            display: none !important;
+        }
+
+        html.optimole_has_js .elementor-section[data-settings*="background_background"]:not(.optml-bg-lazyloaded),
+        html.optimole_has_js .elementor-section>.elementor-background-overlay:not(.optml-bg-lazyloaded),
+        html.optimole_has_js .wp-block-cover[style*="background-image"]:not(.optml-bg-lazyloaded) {
+            background-image: none !important;
+        }
+    </style><noscript>
+        <link rel='stylesheet'
+            href='https://s30246.pcdn.co/wp-content/cache/autoptimize/css/autoptimize_single_a9f1df1c7e6dd672d203db9912a09e84.css?ver=1.0.3'
+            type='text/css' media='all' /></noscript>
+    <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='hfg-style-css'
+        href='https://s30246.pcdn.co/wp-content/cache/autoptimize/css/autoptimize_single_a9f1df1c7e6dd672d203db9912a09e84.css?ver=1.0.3'
+        type='text/css' media='all' /> <noscript>
+        <link rel='stylesheet'
+            href='https://s30246.pcdn.co/wp-content/uploads/neve-theme/neve-customizer.css?ver=1583141718'
+            type='text/css' media='all' /></noscript>
+    <link rel='preload' as='style' onload="this.onload=null;this.rel='stylesheet'" id='neve-generated-style-css'
+        href='https://s30246.pcdn.co/wp-content/uploads/neve-theme/neve-customizer.css?ver=1583141718' type='text/css'
+        media='all' />
+    <link rel='https://api.w.org/' href='https://themeisle.com/wp-json/' />
+    <link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://themeisle.com/xmlrpc.php?rsd" />
+    <link rel="wlwmanifest" type="application/wlwmanifest+xml"
+        href="https://s30246.pcdn.co/wp-includes/wlwmanifest.xml" />
+    <meta name="generator" content="WordPress 5.3.2" />
+    <link rel='shortlink' href='https://themeisle.com/?p=8362483' />
+    <link rel="alternate" type="application/json+oembed"
+        href="https://themeisle.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemeisle.com%2Fdemo%2F" />
+    <link rel="alternate" type="text/xml+oembed"
+        href="https://themeisle.com/wp-json/oembed/1.0/embed?url=https%3A%2F%2Fthemeisle.com%2Fdemo%2F&#038;format=xml" />
+    <meta name="ahrefs-site-verification" content="b79e44f3b3b042cc7b602662c2fe0be49a8e4c663fb7e9843ac772f86b9ebd9b">
+    <script type="text/javascript">
+        var cpm = {};
+        (function (h, u, b) {
+            var d = h.getElementsByTagName("script")[0],
+                e = h.createElement("script");
+            e.async = true;
+            e.src = 'https://cookiehub.net/c2/8e3cbca3.js';
+            e.onload = function () {
+                u.cookiehub.load(b);
+            }
+            d.parentNode.insertBefore(e, d);
+        })(document, window, cpm);
+    </script>
+    <script>
+        "dataLayer.push({\n\t\t\t\t\t\t\tproduct_id: \"3591251\",\n\t\t\t\t\t\t\tproduct_name: \"ShopIsle PRO\",\n\t\t\t\t\t\t\tproduct_price: \"0\",\n\t\t\t\t\t\t\tcontent_category: \"Theme\/Paid\",\n\t\t\t\t\t\t\tproduct_category: \"Theme\",\n\t\t\t\t\t\t})"
+    </script>
+    <script>
+        (function (w, d, s, l, i) {
+            w[l] = w[l] || [];
+            w[l].push({
+                'gtm.start': new Date().getTime(),
+                event: 'gtm.js'
+            });
+            var f = d.getElementsByTagName(s)[0],
+                j = d.createElement(s),
+                dl = l != 'dataLayer' ? '&l=' + l : '';
+            j.async = true;
+            j.src =
+                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+            f.parentNode.insertBefore(j, f);
+        })(window, document, 'script', 'dataLayer', 'GTM-KM44RQ8');
+    </script>
+    <meta name="generator" content="Optimole 2.2.9">
+    <style type="text/css">
+        img[data-opt-src]:not([data-opt-lazy-loaded]) {
+            transition: .2s filter linear, .2s opacity linear, .2s border-radius linear;
+            -webkit-transition: .2s filter linear, .2s opacity linear, .2s border-radius linear;
+            -moz-transition: .2s filter linear, .2s opacity linear, .2s border-radius linear;
+            -o-transition: .2s filter linear, .2s opacity linear, .2s border-radius linear;
+        }
+
+        img[data-opt-src]:not([data-opt-lazy-loaded]) {
+            opacity: .75;
+            -webkit-filter: blur(8px);
+            -moz-filter: blur(8px);
+            -o-filter: blur(8px);
+            -ms-filter: blur(8px);
+            filter: blur(8px);
+            transform: scale(1.04);
+            animation: 0.1s ease-in;
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+    </style>
+    <script type="application/javascript">
+        document.documentElement.className += " optimole_has_js";
+        (function (w, d) {
+            var b = d.getElementsByTagName("head")[0];
+            var s = d.createElement("script");
+            var v = ("IntersectionObserver" in w && "isIntersecting" in w.IntersectionObserverEntry.prototype) ?
+                "_no_poly" : "";
+            s.async = true;
+            s.src = "https://d5jmkjjpb7yfg.cloudfront.net/v2/latest/optimole_lib" + v + ".min.js";
+            b.appendChild(s);
+            w.optimoleData = {
+                lazyloadOnly: "optimole-lazy-only",
+                backgroundReplaceClasses: [],
+                watchClasses: [],
+                backgroundLazySelectors: ".elementor-section[data-settings*=\"background_background\"], .elementor-section > .elementor-background-overlay, .wp-block-cover[style*=\"background-image\"]",
+                network_optimizations: false,
+                ignoreDpr: false,
+                quality: 90
+            }
+
+        }(window, document));
+
+        document.addEventListener("DOMContentLoaded", function () {
+            document.body.className = document.body.className.replace("optimole-no-script", "");
+        });
+    </script>
+    <style type="text/css">
+        .recentcomments a {
+            display: inline !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+    </style>
+    <link rel='canonical' href='https://themeisle.com/themes/shop-isle-pro/' />
+    <link rel="icon"
+        href="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-Jj2bsCFH/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/uploads/2019/04/cropped-favicon-2-32x32.png"
+        sizes="32x32" />
+    <link rel="icon"
+        href="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-cvhbQ8xt/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/uploads/2019/04/cropped-favicon-2-192x192.png"
+        sizes="192x192" />
+    <link rel="apple-touch-icon-precomposed"
+        href="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-NhaWEQ4d/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/uploads/2019/04/cropped-favicon-2-180x180.png" />
+    <meta name="msapplication-TileImage"
+        content="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-lnML3FWv/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/uploads/2019/04/cropped-favicon-2-270x270.png" />
+    <style type="text/css" id="wp-custom-css">
+        /* student page separators temp */
+        .page-template-page-student .wp-block-separator {
+            margin: 70px auto 50px;
+        }
+
+        @media (max-width: 800px) {
+            .wp-block-separator {
+                margin: 50px auto 40px;
+            }
+        }
+
+        /* temporary fix gtm iframe on AMP */
+        .amp-wp-b3bfe1b {
+            display: none !important;
+            visibility: hidden;
+        }
+
+        /* end */
+        #alert-box-title a {
+            color: #4376DD;
+            font-weight: 600;
+        }
+
+        /* temporary fix retired themes wrapper */
+        .themes-template-page-contained-theme .nv-content-wrap {
+            margin-top: -150px;
+        }
+
+        @media (max-width: 600px) {
+            .themes-template-page-contained-theme .nv-content-wrap {
+                margin-top: -90px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .themes-template-page-contained-theme .nv-content-wrap {
+                margin-top: 0;
+            }
+        }
+
+        /* homepage video buttons */
+
+
+        /* neve free day styling */
+        .page-id-8365636 .free-icons-section-title {
+            text-align: center;
+        }
+
+        .page-id-8365636 .free-icons-section-title h2,
+        .page-id-8365636 .free-icons-section-title p {
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .page-id-8365636 .home-plugin-box h5:before {
+            content: url(https://mllj2j8xvfl0.i.optimole.com/w:auto/h:auto/q:auto/https:/s30246.pcdn.co/wp-content/themes/themeisle/assets/img/check-neve.svg);
+            position: relative;
+            top: 2px;
+            margin-right: 10px;
+        }
+
+        .page-id-8365636 .home-plugin-box p {
+            margin-left: 28px;
+        }
+
+        .page-id-8365636 .theme-buy-section .interior-h3 {
+            display: block;
+            margin-bottom: 60px;
+        }
+
+        .page-id-8365636 .theme-buy-section .plugin-heading-small {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1.14px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .neve-day-titles {
+            text-align: center;
+        }
+
+        .neve-day-titles h5 {
+            text-transform: uppercase;
+            font-size: 14px;
+            letter-spacing: 1.14px;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .neve-day-titles .interior-h3 {
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 1199px) {
+            .page-id-8365636 .homepage-plugins {
+                padding-bottom: 10px !important;
+            }
+        }
+
+        @media (max-width: 960px) {
+            .neve-day-titles {
+                padding: 0;
+                margin-bottom: 0;
+            }
+
+            .page-id-8365636 .homepage-testimonials {
+                margin-top: -60px !important;
+            }
+        }
+
+        @media (max-width: 959px) {
+            .page-id-8365636 .banner h1 {
+                max-width: 770px;
+                margin-left: auto;
+                margin-right: auto;
+                line-height: 60px;
+            }
+
+            .page-id-8365636 .homepage-plugins-wrapper {
+                margin-top: 100px !important;
+            }
+
+            .page-id-8365636 .plugin-princing-box.recommended:before {
+                font-size: 14px;
+            }
+
+            .page-id-8365636 .theme-buy-section {
+                padding-bottom: 420px !important
+            }
+
+            .page-id-8365636 .homepage-testimonials .ti-testimonial {
+                margin: 15px 7px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .page-id-8365636 .homepage-plugins-wrapper:before {
+                content: '';
+            }
+
+            .page-id-8365636 .homepage-plugins-wrapper {
+                margin-top: 0 !important;
+            }
+
+            .page-id-8365636 .theme-buy-section {
+                padding-bottom: 0 !important;
+                margin-bottom: 0 !important;
+            }
+
+            .page-id-8365636 .plugin-pricing-details {
+                margin-top: -60px !important;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .page-id-8365636 iframe {
+                height: 293px;
+                width: 100%;
+            }
+
+            .page-id-8365636 .free-icons-section-title {
+                margin-bottom: -40px !important;
+            }
+
+            .page-id-8365636 .banner h1 {
+                line-height: 35px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .page-id-8365636 iframe {
+                height: 248px;
+            }
+
+            .page-id-8365636 .free-icons-section-title {
+                margin-bottom: 0 !important;
+            }
+
+            .page-id-8365636 .homepage-plugins-wrapper {
+                text-align: center;
+            }
+
+            .page-id-8365636 .homepage-plugins-wrapper .wp-block-themeisle-blocks-advanced-column {
+                margin-bottom: -20px !important;
+            }
+
+            .page-id-8365636 .homepage-plugins-wrapper .interior-h3 {
+                margin: 30px 0 20px;
+            }
+
+            .page-id-8365636 .theme-buy-section .interior-h3 {
+                margin-bottom: -20px;
+                margin-top: 0;
+            }
+
+            .page-id-8365636 .plugin-pricing-details {
+                margin-top: -40px !important;
+                margin-bottom: 30px !important;
+            }
+
+            .page-id-8365636 .container.page-shadow {
+                text-align: center;
+                margin-bottom: 0 !important;
+            }
+
+            .page-id-8365636 .container.page-shadow h3.interior-heading {
+                text-align: center !important;
+                font-size: 23px;
+                line-height: normal;
+                margin-top: 10px;
+                margin-bottom: 20px;
+            }
+
+            .page-id-8365636 .affiliates-right-panel ul {
+                padding: 20px;
+                text-align: left;
+            }
+
+            .page-id-8365636 .about-section2 {
+                text-align: center;
+            }
+
+            .page-id-8365636 .about-section2 h2 {
+                font-size: 23px;
+                line-height: normal;
+                margin-top: 20px;
+            }
+
+            .page-id-8365636 .theme-buy-section .plugin-heading-small,
+            .neve-day-titles h5 {
+                font-size: 12px;
+            }
+
+            .neve-day-titles .interior-h3 {
+                margin-top: 0;
+            }
+
+            .neve-day-titles {
+                padding: 0 !important;
+                margin-top: 0 !important;
+            }
+        }
+
+        /* end */
+        /* neve temporary page fix */
+        .neve .theme-buy-section {
+            margin-top: -80px !important;
+            background: #0466cb;
+        }
+
+        .neve .theme-buy-section:before {
+            content: "";
+        }
+
+        .neve .theme-buy-section>.innerblocks-wrap {
+            background: #0466cb;
+        }
+
+        .neve .section9-title {
+            margin-top: 0;
+        }
+
+        .neve .plugin-info-middle {
+            margin-top: -30px !important;
+        }
+
+        .neve .free-download {
+            margin-bottom: 140px;
+        }
+
+        .neve.upgrade h4.pro-feature:after {
+            background: #38c493;
+        }
+
+        /* end */
+        /* temporary fix plugin singles */
+        .plugin-section3 h5 {
+            text-transform: none;
+            color: #393939;
+            padding-top: 0;
+        }
+
+        /* end */
+
+
+        img[data-opt-src]:not([data-opt-lazy-loaded]) {
+            opacity: .75;
+            -webkit-filter: blur(8px);
+            -moz-filter: blur(8px);
+            -o-filter: blur(8px);
+            -ms-filter: blur(8px);
+            filter: blur(8px);
+            transform: scale(1.04);
+            animation: 0.1s ease-in;
+            -webkit-transform: translate3d(0, 0, 0);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="demo-admin-modal"> <a href="" class="close-demo-admin-modal"> <svg xmlns="http://www.w3.org/2000/svg"
+                height="512" width="512" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                <path
+                    d="M437.5 386.6L306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9s-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0s-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9s36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z" />
+            </svg> </a>
+        <h2>Try <span>ShopIsle PRO</span>!</h2>
+        <p class="instructable">Enter your email and get instant access to your dashboard.</p>
+        <p class="loader">Creating account...</p>
+        <p id="admin-demo-api-link"><a target="_blank" class="admin-demo-submit" href="#"> Click here to view the admin
+            </a></p>
+        <form action="" method="post" id="admin-demo-form"> <input type="email" name="email" class="email-input"
+                placeholder="Your email address..." autofocus> <button type="submit" class="admin-demo-submit"
+                id="admin-demo-submit">Log In</button></form>
+        <div class="loader">
+            <div class="sk-circle">
+                <div class="sk-circle1 sk-child"></div>
+                <div class="sk-circle2 sk-child"></div>
+                <div class="sk-circle3 sk-child"></div>
+                <div class="sk-circle4 sk-child"></div>
+                <div class="sk-circle5 sk-child"></div>
+                <div class="sk-circle6 sk-child"></div>
+                <div class="sk-circle7 sk-child"></div>
+                <div class="sk-circle8 sk-child"></div>
+                <div class="sk-circle9 sk-child"></div>
+                <div class="sk-circle10 sk-child"></div>
+                <div class="sk-circle11 sk-child"></div>
+                <div class="sk-circle12 sk-child"></div>
+            </div>
+        </div>
+    </div>
+    <div id="switcher">
+        <div class="center">
+            <div class="logo"> <a href="https://themeisle.com" title="Themeisle"> <img
+                        src="https://mllj2j8xvfl0.i.optimole.com/d0cOXQ-ybg5GCJH/w:auto/h:auto/q:90/https://s30246.pcdn.co/wp-content/themes/themeisle/assets/img/parrot.svg"
+                        alt="Themeisle" /> </a></div>
+            <div class="fbar-separator"></div>
+            <h5 class="fbar-theme-name">Theme: <a href="https://themeisle.com/themes/shop-isle-pro/"> <span>ShopIsle
+                        PRO</span> </a></h5> <span class="fbar-separator middle-separator"></span>
+            <div class="responsive responsive_buttons_demo"> <a href="#" class="desktop active"
+                    title="View Desktop Version"> <svg xmlns="http://www.w3.org/2000/svg" width="1920" height="2048"
+                        viewBox="0 0 2048 1920" preserveAspectRatio="xMidYMid meet">
+                        <path
+                            d="M1792 1120V288c0-8.667-3.167-16.167-9.5-22.5s-13.833-9.5-22.5-9.5H160c-8.667 0-16.167 3.167-22.5 9.5S128 279.333 128 288v832c0 8.667 3.167 16.167 9.5 22.5s13.833 9.5 22.5 9.5h1600c8.667 0 16.167-3.167 22.5-9.5s9.5-13.833 9.5-22.5zm128-832v1088c0 44-15.667 81.667-47 113s-69 47-113 47h-544c0 24.667 5.333 50.5 16 77.5s21.333 50.667 32 71 16 34.833 16 43.5c0 17.333-6.333 32.333-19 45s-27.667 19-45 19H704c-17.333 0-32.333-6.333-45-19s-19-27.667-19-45c0-9.333 5.333-24 16-44s21.333-43.333 32-70 16-52.667 16-78H160c-44 0-81.667-15.667-113-47s-47-69-47-113V288c0-44 15.667-81.667 47-113s69-47 113-47h1600c44 0 81.667 15.667 113 47s47 69 47 113z" />
+                    </svg> </a> <a href="#" class="tabletlandscape" title="View Tablet Landscape (1024x768)"> <svg
+                        xmlns="http://www.w3.org/2000/svg" height="1792" width="1792" viewBox="0 0 1792 1792"
+                        preserveAspectRatio="xMidYMid meet">
+                        <path
+                            d="M960 1408q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm384-160v-960q0-13-9.5-22.5t-22.5-9.5h-832q-13 0-22.5 9.5t-9.5 22.5v960q0 13 9.5 22.5t22.5 9.5h832q13 0 22.5-9.5t9.5-22.5zm128-960v1088q0 66-47 113t-113 47h-832q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h832q66 0 113 47t47 113z" />
+                    </svg> </a> <a href="#" class="tabletportrait" title="View Tablet Portrait (768x1024)"> <svg
+                        xmlns="http://www.w3.org/2000/svg" height="1792" width="1792" viewBox="0 0 1792 1792"
+                        preserveAspectRatio="xMidYMid meet">
+                        <path
+                            d="M960 1408q0-26-19-45t-45-19-45 19-19 45 19 45 45 19 45-19 19-45zm384-160v-960q0-13-9.5-22.5t-22.5-9.5h-832q-13 0-22.5 9.5t-9.5 22.5v960q0 13 9.5 22.5t22.5 9.5h832q13 0 22.5-9.5t9.5-22.5zm128-960v1088q0 66-47 113t-113 47h-832q-66 0-113-47t-47-113v-1088q0-66 47-113t113-47h832q66 0 113 47t47 113z" />
+                    </svg> </a> <a href="#" class="mobilelandscape" title="View Mobile Landscape (480x320)"> <svg
+                        xmlns="http://www.w3.org/2000/svg" height="1792" width="1792" viewBox="0 0 1792 1792"
+                        preserveAspectRatio="xMidYMid meet">
+                        <path
+                            d="M976 1408q0-33-23.5-56.5t-56.5-23.5-56.5 23.5-23.5 56.5 23.5 56.5 56.5 23.5 56.5-23.5 23.5-56.5zm208-160v-704q0-13-9.5-22.5t-22.5-9.5h-512q-13 0-22.5 9.5t-9.5 22.5v704q0 13 9.5 22.5t22.5 9.5h512q13 0 22.5-9.5t9.5-22.5zm-192-848q0-16-16-16h-160q-16 0-16 16t16 16h160q16 0 16-16zm288-16v1024q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-1024q0-52 38-90t90-38h512q52 0 90 38t38 90z" />
+                    </svg> </a> <a href="#" class="mobileportrait" title="View Mobile Portrait (320x480)"> <svg
+                        xmlns="http://www.w3.org/2000/svg" height="1792" width="1792" viewBox="0 0 1792 1792"
+                        preserveAspectRatio="xMidYMid meet">
+                        <path
+                            d="M976 1408q0-33-23.5-56.5t-56.5-23.5-56.5 23.5-23.5 56.5 23.5 56.5 56.5 23.5 56.5-23.5 23.5-56.5zm208-160v-704q0-13-9.5-22.5t-22.5-9.5h-512q-13 0-22.5 9.5t-9.5 22.5v704q0 13 9.5 22.5t22.5 9.5h512q13 0 22.5-9.5t9.5-22.5zm-192-848q0-16-16-16h-160q-16 0-16 16t16 16h160q16 0 16-16zm288-16v1024q0 52-38 90t-90 38h-512q-52 0-90-38t-38-90v-1024q0-52 38-90t90-38h512q52 0 90 38t38 90z" />
+                    </svg> </a></div>
+            <ul class="links">
+                <li class="admindemolink" id="admindemolink"> <a id="admin-demo-button" class="buynow-btn"
+                        href="#admindemo">Admin Demo</a></li>
+                <li class="purchase"> <a id="clickthemefromdemo" class="livedemo-btn"
+                        href="https://themeisle.com/themes/shop-isle-pro/#pricing"> Download</a></li>
+                <li class="hide-fbar"> <a href="#" id="hide-demo-bar"> <svg xmlns="http://www.w3.org/2000/svg"
+                            height="512" width="512" viewBox="0 0 512 512" preserveAspectRatio="xMidYMid meet">
+                            <path
+                                d="M437.5 386.6L306.9 256l130.6-130.6c14.1-14.1 14.1-36.8 0-50.9s-36.8-14.1-50.9 0L256 205.1 125.4 74.5c-14.1-14.1-36.8-14.1-50.9 0s-14.1 36.8 0 50.9L205.1 256 74.5 386.6c-14.1 14.1-14.1 36.8 0 50.9s36.8 14.1 50.9 0L256 306.9l130.6 130.6c14.1 14.1 36.8 14.1 50.9 0 14-14.1 14-36.9 0-50.9z" />
+                        </svg> <svg xmlns="http://www.w3.org/2000/svg" height="32" width="32" viewBox="0 0 32 32"
+                            preserveAspectRatio="xMidYMid meet">
+                            <path
+                                d="M14.77 23.795L5.185 14.2c-.88-.88-.88-2.317 0-3.195l.8-.8c.877-.878 2.316-.878 3.194 0l7.315 7.315 7.316-7.315c.878-.878 2.317-.878 3.194 0l.8.8c.88.878.88 2.316 0 3.195l-9.587 9.585c-.47.472-1.104.682-1.723.647-.62.035-1.25-.175-1.724-.647z"
+                                fill="#515151" /></svg> </a></li>
+            </ul>
+        </div>
+    </div> <iframe id="iframe" src="https://demo.themeisle.com/shop-isle-pro/" frameborder="0" width="100%"></iframe>
+    <script defer type='text/javascript'
+        src='https://s30246.pcdn.co/wp-content/themes/themeisle/assets/build/demo.min.js?ver=3.1.2'></script>
+    <script type='text/javascript'>
+        var NeveProperties = {
+            "ajaxurl": "https:\/\/themeisle.com\/wp-admin\/admin-ajax.php",
+            "nonce": "6591c9ed4b"
+        };
+    </script>
+    <script defer type='text/javascript'
+        src='https://s30246.pcdn.co/wp-content/cache/autoptimize/js/autoptimize_single_81bd44a69e79414c47a56c9b8ee861bc.js?ver=2.3.7'>
+    </script>
+    <script defer type='text/javascript'
+        src='https://s30246.pcdn.co/wp-content/cache/autoptimize/js/autoptimize_single_ba5d361786d8dee755e0d0aa09f49189.js?ver=1.0.3'>
+    </script>
+    <script id="fsc-api" src="https://d1f8f9xcsvx3ha.cloudfront.net/sbl/0.8.0/fastspring-builder.min.js"
+        type="text/javascript" data-storefront="themeisle.onfastspring.com/popup-themeisle"
+        data-data-callback="themeisleOrderCallback" data-after-markup-callback="themeisleAfterMarkup"
+        data-popup-closed="themeislePopupClosed" data-decorate-callback="themeisleDecorateUrl"></script>
+    <script data-cfasync='false'>
+        ! function (t) {
+            "use strict";
+            t.loadCSS || (t.loadCSS = function () {});
+            var e = loadCSS.relpreload = {};
+            if (e.support = function () {
+                    var e;
+                    try {
+                        e = t.document.createElement("link").relList.supports("preload")
+                    } catch (t) {
+                        e = !1
+                    }
+                    return function () {
+                        return e
+                    }
+                }(), e.bindMediaToggle = function (t) {
+                    function e() {
+                        t.media = a
+                    }
+                    var a = t.media || "all";
+                    t.addEventListener ? t.addEventListener("load", e) : t.attachEvent && t.attachEvent("onload", e),
+                        setTimeout(function () {
+                            t.rel = "stylesheet", t.media = "only x"
+                        }), setTimeout(e, 3e3)
+                }, e.poly = function () {
+                    if (!e.support())
+                        for (var a = t.document.getElementsByTagName("link"), n = 0; n < a.length; n++) {
+                            var o = a[n];
+                            "preload" !== o.rel || "style" !== o.getAttribute("as") || o.getAttribute("data-loadcss") ||
+                                (o.setAttribute("data-loadcss", !0), e.bindMediaToggle(o))
+                        }
+                }, !e.support()) {
+                e.poly();
+                var a = t.setInterval(e.poly, 500);
+                t.addEventListener ? t.addEventListener("load", function () {
+                    e.poly(), t.clearInterval(a)
+                }) : t.attachEvent && t.attachEvent("onload", function () {
+                    e.poly(), t.clearInterval(a)
+                })
+            }
+            "undefined" != typeof exports ? exports.loadCSS = loadCSS : t.loadCSS = loadCSS
+        }("undefined" != typeof global ? global : this);
+    </script>
+</body>
+
+</html>
