@@ -1,5 +1,5 @@
 <?php
-    $conn=mysqli_connect('localhost','cheris','cherisom13102000','Shopping');
+    $conn=mysqli_connect('localhost','<Your Username>','<Your Password>','Shopping');
     if (!$conn) {
         echo 'Connection Error : '. mysqli_connect_error(); 
     }
